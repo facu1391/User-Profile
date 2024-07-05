@@ -1,0 +1,17 @@
+.interests {
+    padding: 20px;
+    background-color: #fff;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+  
+.interests ul {
+    list-style: none;
+    padding: 0;
+}
+  
+.interests li {
+    margin: 5px 0;
+}
+  

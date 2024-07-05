@@ -1,40 +1,67 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Perfil de Usuario
 
-## Getting Started
+Este proyecto es una página de perfil de usuario creada con Next.js, React y CSS Modules.
 
-First, run the development server:
+## Características
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Next.js y React**: Utiliza Next.js 14 para la estructura del proyecto y componentes de React para cada sección de la página.
+- **CSS Modules**: Manejo de estilos con CSS Modules para un mejor aislamiento y modularidad.
+- **Formulario de Contacto**: Formulario con campos para nombre, email y mensaje, con validación básica y mensaje de éxito al enviar.
+- **Responsivo**: Diseño responsivo que se adapta a diferentes tamaños de pantalla.
+- **Animaciones**: Transiciones suaves para mejorar la experiencia del usuario.
+
+## Instalación
+
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/tu-usuario/user-profile.git
+   cd user-profile
+   npm install
+   ```
+
+2. Ejecuta el proyecto en modo desarrollo: 
+    ``` npm run dev ```
+
+3. Abre http://localhost:3000 para ver el proyecto en tu navegador.
+
+## Deploy 
+El proyecto está desplegado en Vercel. Puedes ver la versión en vivo en el siguiente enlace: https://user-profile-steel.vercel.app/
+
+## Estructura del Proyecto
+* /components: Contiene los componentes React para cada sección de la página (Header, About, Interests, ContactForm).
+* /pages: Contiene las páginas del proyecto Next.js, incluyendo la página principal index.js.
+* /styles: Contiene los archivos CSS globales y módulos CSS. 
+
+## Ejecutar Pruebas
+El proyecto incluye pruebas básicas utilizando Jest y Testing Library.
+
+1. Instala las dependencias de desarrollo necesarias:
+ ``` npm install --save-dev jest babel-jest @testing-library/react @testing-library/jest-dom @testing-library/dom @testing-library/user-event jest-environment-jsdom``` 
+
+2. Configura Jest añadiendo un archivo jest.config.js en la raíz del proyecto:
 ```
+// jest.config.js
+module.exports = {
+  testPathIgnorePatterns: ['<rootDir>/.next/', '<rootDir>/node_modules/'],
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
+  testEnvironment: 'jest-environment-jsdom',
+};
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+ ```
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+ 3. Añade un archivo jest.setup.js para extender Jest con Testing Library: 
+ ```
+// jest.setup.js
+import '@testing-library/jest-dom/extend-expect';
+ ```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+4. Ejecuta las pruebas: 
+``` npm test ```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Contribuir
+Si deseas contribuir a este proyecto, por favor, abre un issue o envía un pull request.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
